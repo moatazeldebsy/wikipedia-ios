@@ -6,7 +6,7 @@ $:.unshift File.dirname(__FILE__)
 default_platform :ios
 
 configurations_to_test_on_pull = [
-  {device: 'iPhone 14 Pro', os: '16.'},
+  {device: 'iPhone 14 Pro', os: '16.2'},
   {device: 'iPad Pro (12.9-inch) (5th generation)', os: '16.2'}
 ]
 
@@ -63,7 +63,7 @@ platform :ios do
       scheme: "Wikipedia",
       configuration: "Debug",
       sdk: 'iphonesimulator',
-      destination: 'platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro',
+      destination: 'platform=iOS Simulator,OS=14.2,name=iPhone 14 Pro',
       analyze: true
     )
   end
@@ -116,7 +116,7 @@ platform :ios do
   lane :record_visual_tests do |options|
     read_xcversion
     clean_out_reference_images
-    options[:configurations] ||= configurations_to_test
+    options[:configurations] ||= configurations_to_test_on_pull
     devices_by_scheme = get_devices_by_scheme_from_options(options)
     devices_by_scheme.each do |scheme, devices|
       opts = {
