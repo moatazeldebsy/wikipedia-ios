@@ -11,12 +11,12 @@ configurations_to_test_on_pull = [
 ]
 
 def get_devices_by_scheme_from_options(options)
-  configs = options[:configurations] || [{device: 'iPhone 14 Pro', os: '16.3'}]
+  configs = options[:configurations] || [{device: 'iPhone 14 Pro', os: '16.2'}]
   devices_by_scheme = {}
   configs.each do |options|
     scheme = options[:scheme] || 'Wikipedia'
     device = options[:device] || 'iPhone 14 Pro'
-    os = options[:os]         || '16.3'
+    os = options[:os]         || '16.2'
     sim = "#{device} (#{os})"
     devices = devices_by_scheme[scheme] || []
     devices << sim
