@@ -63,7 +63,7 @@ platform :ios do
       scheme: "Wikipedia",
       configuration: "Debug",
       sdk: 'iphonesimulator',
-      destination: 'platform=iOS Simulator,OS=14.2,name=iPhone 14 Pro',
+      destination: 'platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro',
       analyze: true
     )
   end
